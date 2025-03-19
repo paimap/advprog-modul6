@@ -8,3 +8,9 @@ let status_line = "HTTP/1.1 200 OK"; menentukan status HTTP Response. let conten
 Jika request line adalah "GET / HTTP/1.1" maka akan membaca hello.html selain dari itu maka akar membaca 404.html.
 
 Refactoring diperlukan untuk meningkatkan maintainability, jika kita ingin mengganti response, kita tidak perlu untuk menggantinya 2 kali (pada blok if dan else).
+
+![](commit3.png)
+
+# Commit 4 Reflection Notes
+Browser membutuhkan waktu untuk load karena server hanya menggunakan satu thread untuk menangani semua koneksi. Saat ada request ke /sleep, program tidak bisa menangani permintaan lain sampai thread::sleep(Duration::from_secs(5)) selesai.
+
