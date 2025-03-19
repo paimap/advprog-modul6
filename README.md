@@ -3,3 +3,8 @@ Fungsi handle_connection menerima satu parameter yaitu sebuah koneksi TCP yang a
 
 # Commit 2 Reflection Notes
 let status_line = "HTTP/1.1 200 OK"; menentukan status HTTP Response. let contents = fs::read_to_string("hello.html").unwrap(); membaca isi file hello.html sebagai string. let length = contents.len(); menghitung panjang konten. let response = format!("{status_line}\r\nContent-Length: {length}\r\n\r\n{contents}"); membuat response HTTP. stream.write_all(response.as_bytes()).unwrap(); mengirimkan response ke klien. Jad, fungsi handle_connection yang baru dapat menambahkan HTTP response setelah membaca request, membaca file hello.html, dan mengirim response lengkap ke klien melalui TcpStream. 
+
+# Commit 3 Reflection Notes
+Jika request line adalah "GET / HTTP/1.1" maka akan membaca hello.html selain dari itu maka akar membaca 404.html.
+
+Refactoring diperlukan untuk meningkatkan maintainability, jika kita ingin mengganti response, kita tidak perlu untuk menggantinya 2 kali (pada blok if dan else).
