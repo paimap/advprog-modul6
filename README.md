@@ -14,3 +14,6 @@ Refactoring diperlukan untuk meningkatkan maintainability, jika kita ingin mengg
 # Commit 4 Reflection Notes
 Browser membutuhkan waktu untuk load karena server hanya menggunakan satu thread untuk menangani semua koneksi. Saat ada request ke /sleep, program tidak bisa menangani permintaan lain sampai thread::sleep(Duration::from_secs(5)) selesai.
 
+# Commit 5 Reflection Notes 
+Dengan thread pool, request ke /sleep tidak mengganggu request lain karena masing-masing diproses dalam thread terpisah
+
