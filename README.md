@@ -1,0 +1,3 @@
+# Commit 1 Reflection Notes
+Fungsi handle_connection menerima satu parameter yaitu sebuah koneksi TCP yang akan diproses. BufReafer membaca data dari TcpStream. Lines() mengembalika iterator yang membaca baris dari buffer. map(|result| result.unwrap()) mengambil nilai dari Result<String>. take_while(|line| !line.is_empty()) membaca baris sebelum baris kosong. collect() mengubah iterator menjadi vector. println!("Request: {:#?}", http_request); mencetak vektor HTTP request. Jadi fungsi handle_connection berguna untuk membaca permintaa HTTP dari klien, menyimpan bagian header HTTP, dan mencetak hasilnya ke terminal.
+
